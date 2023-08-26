@@ -1,0 +1,23 @@
+
+//Estilos para validavion
+.formulario-correcto{
+    color:greenyellow;
+    opacity: 1;
+}
+
+.formulario-correcto label{
+    color:red;
+}
+.formulario-incorrecto input{
+    border:3px solid red;
+}
+
+.input-error{
+    display: none;
+    font-size: 12px;
+	margin-bottom: 0;
+	
+}
+.input-error-activo {
+	display: block;
+}

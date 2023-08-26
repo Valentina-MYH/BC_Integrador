@@ -1,0 +1,60 @@
+
+   
+
+.Footer{
+
+    left: 0;
+    bottom: 0;
+    background-color:#9F968F ;
+    color:white;
+    .conteiner{  
+        .lorem{
+            margin:10px;
+            text-align: center;
+        }
+        .contacto{
+            display: flex;
+            padding-bottom: 40px;
+            padding-left:40% ;
+            
+            ul{
+                align-items: center; 
+                li i{
+                    width: 70px;
+                }
+                  
+            }
+        }
+    }
+}
+
+
+@media (min-width:800px){
+    .Footer{
+    
+
+    .conteiner{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    a img{
+        width: 200px;
+        grid-column: 1/2;
+    }
+    .lorem{
+        margin:10px;
+        grid-column: 2/3;
+        text-align: center;
+
+    }
+    .contacto{
+        grid-column: 3/4;
+        
+        padding-bottom: 40px;
+        padding-left:40% ;        
+        ul{
+            align-items: center;            
+        }
+    }
+}
+}

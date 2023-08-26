@@ -1,0 +1,90 @@
+// #A39C95 -> BEIGE, #9F968F ->BEIGE OSCURO, #503F40
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap');
+/*font-family: 'Playfair Display', serif;
+font-family: 'Quicksand', sans-serif;*/
+body{
+    margin:0px;
+    font-family:'Quicksand', sans-serif; 
+    letter-spacing: 1px;
+    background-color: #dfdfdf;   
+}
+    
+.Header{
+    position: fixed;
+    top:0;
+    background-color:#9F968F ;
+    width: 100%;
+    color:white;
+    
+    display: flex; 
+}
+
+i{
+    color:#9F968F;
+
+}
+#logo{
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+ul{
+    display: flex;
+    align-items: start;
+    padding:0;
+    width: 40%;
+    justify-content: space-evenly;
+
+    li{
+        list-style: none;
+        a{
+           text-decoration: none; 
+             color: white;
+             :hover{
+                color:#34292a;
+             }
+        } 
+    }
+}
+.active{
+    text-decoration: underline;
+}
+
+@media (max-width:800px){
+    header{
+        flex-wrap: wrap;
+
+        i{
+            color:white;
+        }
+        
+    }
+    #links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        ul{
+            display: flex;
+            align-items: start;
+            
+            li{
+            margin:10px;
+            }
+        
+        }
+        
+        
+    }
+    #menu{
+        display: block;
+        margin-left: auto;
+        margin-right: 2%;
+        i{
+            
+            font-size: 30px;
+        }
+    }
+
+}

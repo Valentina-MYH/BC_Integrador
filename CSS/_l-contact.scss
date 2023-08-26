@@ -1,0 +1,70 @@
+
+
+form{
+    font-size: 30px;
+    width: 70%;
+    padding: 5%;
+    margin-top: 5% ;
+    margin-bottom: 5%;
+    box-shadow: 0 0 20px 1px;
+    margin-left: 10%
+   ;
+
+    h2{
+        text-align: center;
+        margin-top: 10px;
+        color:rgba(0,0,0,0.7);
+    }
+
+    
+    .label, .formFields{
+        display: block;
+        font-size: 1em;
+        width: 100%;
+        border: 1px solid beige;
+        margin-bottom: 10px;
+    }
+    // #A39C95 -> BEIGE, #9F968F ->BEIGE OSCURO, #503F40
+
+    .formFields{
+        margin-top: 30px;
+        padding: 20px 0 20px 20px;
+        background-color:#d0ceced7 ;
+        margin-bottom: 40px;
+        border:1px solid rgba(0,0,0,0.3);
+        background: rgb(0, 0,0,0.1);
+        :focus{
+            outline: 1px solid rgba(0,0,0,0.7);
+        }    
+    
+    }
+    .formFields:focus + .label{
+            margin-top: -12%;
+        }
+
+
+    .label{
+        padding-left: 15px;
+        position: absolute;
+        margin-top: -105px;
+        z-index: -35px;
+        border:none;
+        background: transparent;
+        color: rgba(0,0,0,0.5);
+        transition: all 0.2s;
+        
+    }
+
+    button{
+        background:rgba(41, 39, 39, 0.801);
+        color:white;
+        padding: 10px 20px;
+        cursor: pointer;
+        border:none;
+    }
+    
+
+
+
+
+}

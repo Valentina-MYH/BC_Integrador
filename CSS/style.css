@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap");
+/*font-family: 'Playfair Display', serif;
+font-family: 'Quicksand', sans-serif;*/
+body {
+  margin: 0px;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 1px;
+  background-color: #dfdfdf;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  background-color: #9F968F;
+  width: 100%;
+  color: white;
+  display: flex;
+}
+
+i {
+  color: #9F968F;
+}
+
+#logo {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+ul {
+  display: flex;
+  align-items: start;
+  padding: 0;
+  width: 40%;
+  justify-content: space-evenly;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+ul li a :hover {
+  color: #34292a;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-wrap: wrap;
+  }
+  header i {
+    color: white;
+  }
+  #links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  #links ul {
+    display: flex;
+    align-items: start;
+  }
+  #links ul li {
+    margin: 10px;
+  }
+  #menu {
+    display: block;
+    margin-left: auto;
+    margin-right: 2%;
+  }
+  #menu i {
+    font-size: 30px;
+  }
+}
+.content {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: url(../img/principal.jpeg) no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.content .text {
+  margin: 20px;
+  margin-left: 5%;
+  color: #231d1d;
+  text-shadow: 5px 5px 5px #503F40;
+}
+.content .text h3 {
+  font-size: 50px;
+  margin-top: 0;
+}
+.content .text p {
+  text-shadow: 25px 25px 25px 25px #A39C95;
+  font-size: 30px;
+}
+
+#cards-container {
+  padding: 100px 8%;
+  background-color: rgba(163, 156, 149, 0.4039215686);
+}
+
+.article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+  box-shadow: #503F40;
+  cursor: pointer;
+}
+
+.card {
+  padding: 0 20px 10px 20px;
+  background: transparent;
+  box-shadow: 5px 10px 10px 5px rgba(80, 63, 64, 0.6784313725);
+  border-radius: 10px;
+}
+.card img {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.card h4 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.card h5 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+.card i {
+  width: 35px;
+  color: #503F40;
+}
+
+.Footer {
+  left: 0;
+  bottom: 0;
+  background-color: #9F968F;
+  color: white;
+}
+.Footer .conteiner .lorem {
+  margin: 10px;
+  text-align: center;
+}
+.Footer .conteiner .contacto {
+  display: flex;
+  padding-bottom: 40px;
+  padding-left: 40%;
+}
+.Footer .conteiner .contacto ul {
+  align-items: center;
+}
+.Footer .conteiner .contacto ul li i {
+  width: 70px;
+}
+
+@media (min-width: 800px) {
+  .Footer .conteiner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Footer a img {
+    width: 200px;
+    grid-column: 1/2;
+  }
+  .Footer .lorem {
+    margin: 10px;
+    grid-column: 2/3;
+    text-align: center;
+  }
+  .Footer .contacto {
+    grid-column: 3/4;
+    padding-bottom: 40px;
+    padding-left: 40%;
+  }
+  .Footer .contacto ul {
+    align-items: center;
+  }
+}
+form {
+  font-size: 30px;
+  width: 70%;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  box-shadow: 0 0 20px 1px;
+  margin-left: 10%;
+}
+form h2 {
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+form .label, form .formFields {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  border: 1px solid beige;
+  margin-bottom: 10px;
+}
+form .formFields {
+  margin-top: 30px;
+  padding: 20px 0 20px 20px;
+  background-color: rgba(208, 206, 206, 0.8431372549);
+  margin-bottom: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
+}
+form .formFields :focus {
+  outline: 1px solid rgba(0, 0, 0, 0.7);
+}
+form .formFields:focus + .label {
+  margin-top: -12%;
+}
+form .label {
+  padding-left: 15px;
+  position: absolute;
+  margin-top: -105px;
+  z-index: -35px;
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+form button {
+  background: rgba(41, 39, 39, 0.801);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.top {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: url(../img/us.jpeg) no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-shadow: 25px 25px 25px 25px #A39C95;
+  font-size: 30px;
+}
+.top h3 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+.contenido img {
+  width: 300px;
+}/*# sourceMappingURL=style.css.map */
