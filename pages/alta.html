@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Up Date</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../js/script.js"></script>
+    <script src="../js/alta.js"></script>
 
 </head>
 <body>
@@ -30,60 +30,71 @@
             <div class="grupo" id="grupo-nombre">
                 <label for="nombre">Nombre:</label>
                 <input class="formFields"  type="text" id="nombre" name="nombre" required>
-                <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+                <p class="input-error">El Nombre debe contener unicamente letras y el primer caracter debe ser en mayusculas</p>
             </div>
             <div class="grupo" id="grupo-precio">
                 <label for="precio">Precio:</label>
-                <input class="formFields" type="number" id="precio" name="precio" step="0.01" required>
-                <p class="input-error" style="display:none;">El mnbvfgh</p>
+                <input class="formFields" type="text" id="precio" name="precio" step="0.01" required>
+                <p class="input-error" >El precio debe obligatoriamente comenzar con el caracter '$' y contener unicamente numeros</p>
             </div>
             <div class="grupo" id="grupo-stock">
                 <label for="stock">Stock:</label>
                 <input class="formFields"  type="number" id="stock" name="stock" required>
-                <p class="input-error" style="display:none;">VGHJKO</p>
+                <p class="input-error" >El stock debe contener unicamente numeros</p>
             </div>
             <div class="grupo" id="grupo-marca">
                 <label for="marca">Marca:</label>
                 <input class="formFields"  type="text" id="marca" name="marca" required>
-                <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+                <p class="input-error">La marca puede tener letras, numeros y signos</p>
             </div>
             <div class="grupo" id="grupo-categoria">
                 <label for="categoria">Categoría:</label>
                 <input class="formFields"  type="text" id="categoria" name="categoria" required>
-                <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+                <p class="input-error" >Categoria debe decir una de estas opciones: Nuevo, Casi nuevo o Usado.
+                </p>
             </div>
             <div class="grupo" id="grupo-descrip-corta">
-                <label for="descripcion_corta">Descripción Corta:</label>
-                <textarea class="formFields"  id="descripcion_corta" name="descripcion_corta" rows="3" required></textarea>
-                <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+                <label for="descrip-corta">Descripción Corta:</label>
+                <textarea class="formFields"  id="descrip-corta" name="descrip-corta" rows="3" required></textarea>
+                <p class="input-error" >La descripcion corta debe contener de 1 a 50 caracteres</p>
             </div> 
-            <div class="grupo" id="grupo-descrip-corta">
-                <label for="descripcion_larga">Descripción Larga:</label>
-                <textarea class="formFields"  id="descripcion_larga" name="descripcion_larga" rows="6" required></textarea>
-                <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>    
+            <div class="grupo" id="grupo-descrip-larga">
+                <label for="descrip-larga">Descripción Larga:</label>
+                <textarea class="formFields"  id="descrip-larga" name="descrip-larga" rows="6" required></textarea>
+                <p class="input-error" >La descripcion larga debe contener de 50 a 100 caracteres.</p>    
             
             </div> 
             <div class="grupo" id="grupo-envio-gratis">
-                <label for="envio_gratis">Envío sin Cargo:</label>
-                <input type="checkbox" id="envio_gratis" name="envio_gratis">
-                <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+                <label for="envio-gratis">Envío sin Cargo:</label>
+                <input type="checkbox" id="envio-gratis" name="envio-gratis">
+                
             </div> 
             <div class="grupo" id="grupo-edad-desde">
-              <label for="edad_desde">Edad Desde:</label>
-              <input type="number" id="edad_desde" name="edad_desde">
-              <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+              <label for="edad-desde">Edad Desde:</label>
+              <input type="text" id="edad-desde" name="edad-desde">
+              <p class="input-error" >La edad desde debe tener formato fecha: 'XX/XX/XXXX'</p>
             </div> 
             <div class="grupo" id="grupo-edad-hasta">
-              <label for="edad_hasta">Edad Hasta:</label>
-              <input   type="number" id="edad_hasta" name="edad_hasta">
-              <p class="input-error" style="display:none;">El Nombre debe contener unicamente letras</p>
+              <label for="edad-hasta">Edad Hasta:</label>
+              <input   type="text" id="edad-hasta" name="edad-hasta">
+              <p class="input-error" >La edad hasta debe tener formato fecha: 'XX/XX/XXXX'</p>
             </div>
             <div class="grupo" id="grupo-foto">
               <label for="foto">Foto:</label>
               <input type="file" id="foto" name="foto" accept="image/*" required>           
-              <p class="input-error" style="display:none;">Seleccione foto del producto</p>
+              <p class="input-error" >Seleccione foto del producto</p>
             </div>  
-              <button class="formFields"  type="submit">Enviar</button>
+
+            <div class="mensaje" id="mensaje">
+				<p><b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+
+            <div class="button-enviar">
+                <button class="formFields"  type="submit">Enviar</button>
+                <p class="mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
+              
         </form>
 
     </main>

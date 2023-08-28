@@ -7,66 +7,117 @@ function openMenu(){
         link.style.display = 'flex';
     }
 }
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('formFields');
 
-
-const formulario = document.getElementById("formulario");
-const inputs = document.querySelectorAll('form input');
-const label = document.querySelectorAll('form label');
+const label = document.querySelectorAll('label');
 
 const expresiones = {
-    nombre: /^[A-Za-z]\+$/,
-    precio: /^.{5,20}$/,
-    stock: /^.{5,20}$/,
-    descripcionCorta:/^.{5,20}$/,
-    descripcionLarga:/^.{20,40}$//*,
-    edadDesde:,
-    edadHasta: */
+    nombres: /^[A-Z][a-zA-Z]*$/,
+    precio: /^\$[\d]+(\.\d{1,2})?$/,
+    stock: /^\d+(\.\d{1,2})?$/,
+    marca: /^[a-zA-Z0-9\s\-_.]*$/,
+    categoria: /^(Nuevo|Casi nuevo|Usado)$/,
+    corta:/^.{1,50}$/,
+    larga:/^.{50,100}$/,
+    edad : /^(1[8-9]|[2-9]\d|100)$/
 }
+const campos = {
+    nombre:false,
+    precio:false,
+    stock:false,
+    marca:false,
+    categoria:false,
+    corta:false,
+    larga:false,
+    desde:false,
+    hasta:false
+    
+}
+
 const validarFormulario = (e) => {
 switch (e.target.name){
-    case 'nombre' :
-        if(expresiones.nombre.test(e.target.value)){
-            document.getElementById('grupo-nombre').classList.remove('formulario-correcto');
-            document.getElementById('grupo-nombre').classList.add('formulario-correcto');
-            
-        }else{
-            document.getElementById('grupo-nombre').classList.add('formulario-incorrecto');
-            document.getElementById('grupo-nombre').classList.remove('formulario-incorrecto');
-            document.querySelector('#grupo-nombre .input-error').classList.add('input-error-activo');
+    case 'nombre': 
+        validarCampo(expresiones.nombres, e.target, 'nombre');
+    break;
+    case 'precio':
+        validarCampo(expresiones.precio, e.target, 'precio');
+    break;
+    case 'stock' :
+        validarCampo(expresiones.stock, e.target, 'stock');
+    break;
+    case 'marca' : 
+        validarCampo(expresiones.marca, e.target, 'marca')
+    break;
+    case 'categoria':
+    validarCampo(expresiones.categoria, e.target, 'categoria');
+    break;
+    case 'descrip-corta':
+        validarCampo(expresiones.corta, e.target, 'descrip-corta')
+        break;
+    case 'descrip-larga':
+        validarCampo(expresiones.larga, e.target, 'descrip-larga')
+        break;
+    case 'edad-desde':
+        validarCampo(expresiones.edad, e.target, 'edad-desde');
+    break;
+    case 'edad-hasta':
+        validarCampo(expresiones.edad, e.target, 'edad-hasta');
+    break;
+};
+}
+
+
+const validarCampo = (expresion, input, campo) => {
+    if(expresion.test(input.value)) {
+        document.getElementById(`grupo-${campo}`).classList.remove('grupo-incorrecto');
+        document.getElementById(`grupo-${campo}`).classList.add('grupo-correcto');
+        document.querySelector(`#grupo-${campo} .input-error`).classList.remove('input-error-activo');
+        
+        campos[campo] = true;
+    }
+    else{
+        document.getElementById(`grupo-${campo}`).classList.add('grupo-incorrecto');
+        document.getElementById(`grupo-${campo}`).classList.remove('grupo-correcto');
+        document.querySelector(`#grupo-${campo} .input-error`).classList.add('input-error-activo');
+        campos[campo] = false;
+
+    }
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('.formFields');
+
+    inputs.forEach((input) => {
+        input.addEventListener('keyup', validarFormulario);
+        input.addEventListener('blur', validarFormulario);
+    });
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (
+            campos.nombre &&
+            campos.precio &&
+            campos.stock &&
+            campos.marca &&
+            campos.categoria &&
+            campos.larga &&
+            campos.corta &&
+            campos.desde &&
+            campos.hasta
+            ) {
+                
+            formulario.reset();
+            document.getElementById('mensaje-exito').classList.add('mensaje-exito-activo');
+        } else {
+            document.getElementById('mensaje').classList.add('mensaje-activo');
         }
-        break;
-
-    case 'precio' :
-        break;
-
-    case 'stok' :
-        break;
-
-    case 'usuario' :
-        break;
-    case 'descripcionCorta':
-        break;
-    case 'descripcionLarga':
-        break;
-    case 'edadDesde':
-        break;
-    case 'edadHasta':
-        break;
-};
-
-
-
-};
-
-//cada input pasa por esta funcion
-inputs.forEach((input)=>{
-    input.addEventListener('keyup', validarFormulario);//levanta la tecla
-    input.addEventListener('blur', validarFormulario);//cuando completo un input y toca afuera
-
+    });
 });
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-
-});
+    
+   

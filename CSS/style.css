@@ -145,6 +145,29 @@ ul li a :hover {
   color: #503F40;
 }
 
+.formulario-correcto {
+  color: greenyellow;
+  opacity: 1;
+}
+
+.formulario-correcto label {
+  color: red;
+}
+
+.formulario-incorrecto input {
+  border: 3px solid red;
+}
+
+.input-error {
+  font-size: 12px;
+  margin-bottom: 0;
+  display: none;
+}
+
+.input-error-activo {
+  display: block;
+}
+
 .Footer {
   left: 0;
   bottom: 0;
@@ -261,6 +284,110 @@ form button {
   margin-top: 0;
 }
 
-.contenido img {
-  width: 300px;
+.about-section {
+  margin: 10%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #503F40;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #503F40;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-shadow: 5px 5px 5px #503F40;
+}
+
+.about-section p {
+  margin-bottom: 20px;
+}
+
+.about-section img {
+  width: 600px;
+}
+
+.team-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-text {
+  width: 50%;
+  text-align: left;
+}
+
+.team-text p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .about-section {
+    display: block;
+  }
+  .about-section img {
+    width: 250px;
+  }
+}
+.input-error {
+  font-size: 12px;
+  margin-bottom: 0;
+  display: none;
+}
+
+.input-error-activo {
+  display: block;
+}
+
+.grupo-correcto {
+  color: green;
+  opacity: 1;
+}
+
+.grupo-incorrecto .label {
+  color: red;
+}
+
+.grupo-incorrecto {
+  color: red;
+}
+
+.mensaje {
+  font-size: 14px;
+  color: red;
+  display: none;
+}
+
+.mensaje-activo {
+  display: block;
+}
+
+.mensaje-exito {
+  font-size: 14px;
+  color: green;
+  display: none;
+}
+
+.mensaje-exito-activo {
+  display: block;
+}
+
+.msj {
+  font-size: 14px;
+  color: red;
+  display: none;
+}
+
+.msj-activo {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

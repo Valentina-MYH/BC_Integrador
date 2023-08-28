@@ -7,57 +7,88 @@ function openMenu(){
         link.style.display = 'flex';
     }
 }
-/*
 
-let form = document.querySelector("form");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let nombre = e.target[0].value;
-    nombre = sanitize();
-    let apellido = e.target[1].value;
-    apellido = sanitize();
-
-    let mail = e.target[2].value;
-    validateEmail(mail);
-});
-
+const form = document.querySelector("form");
 const regExp = /^[A-Z]\D*$/;
+const mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const msjRegex = /^.{1,70}$/;
+
+const campos = {
+    nombre:false,
+    apellido:false,
+    mail:false,
+    mensaje: false
+
+}
+
+const validarForm = (e) => {
+    switch(e.target.name){
+        case 'nombre':
+            sanitize('nombre');
+
+        break;
+        case 'apellido':
+            sanitize('apellido');
+
+        break;
+
+        case 'mail':
+            validateEmail('mail')
+
+        break;
+        case 'mensaje':
+            if(mensaje.match(msjRegex)){
+                campos.mensaje = true;
+            }else{
+                campos.mensaje = false;
+            }
+
+        break;
+    }
+}
+
+
 function sanitize(inputValue){
-let sanitizedValue = inputValue.trim();
-//Se fije si la primera letra es mayuscula
+    let sanitizedValue = inputValue.trim();
+    
     if(sanitizedValue.match(regExp)){
+        campos.inputValue = true;
         return sanitizedValue;  
     }else{
         sanitizedValue = sanitizedValue.charAt(0).toUpperCase() + sanitizedValue.slice(1);
         return sanitizedValue;
     }
 }
-
-const mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
 function validateEmail(mail) {
     if(validateEmail.mail(mailRegex)){
         console.log("Mail Valido")
+        campos.mail = true;
     }else{
         console.log("Email no valido")
     }
 }
+form-addEventListener ('submit', (e) =>{
+    if(campos.nombre && campos.apellido && campos.mail ){
+        console.log("formulario enviado");
+        
+    }else{document.getElementById('msj').classList.add('msj-activo');
+
+    }
+})
 
 
-//Si se escribe algo en el input, la informacion del label no vuelve a bajar a su posicion original
-var inputs = document.querySelectorAll("input");
-for (let i = 0; i < inputs.length; i++) {
-  const label = document.querySelector(`label[for='${inputs[i].id}']`);
-  console.log(`Input ID: ${inputs[i].id}, Label: ${label}`);
-  
-  inputs[i].addEventListener('keyup', function() {
-    if (this.value.length >= 1) {
-      label.style.marginTop = '-12%';
-    } else {
-      label.style.marginTop = '0';
-    }  
-  });
-}
-*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('.formFields');
+
+    inputs.forEach((input) => {
+        input.addEventListener('keyup', validarFormulario);
+        input.addEventListener('blur', validarFormulario);
+    });
+});
+
+
+
+
+
+

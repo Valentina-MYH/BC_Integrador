@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../js/script.js"></script>
 
@@ -25,29 +25,43 @@
 
     <main>
         <h1>Contacto</h1>
-        <form id="formulario">
-            <h2 id="validationSummary"> Contacto
-                    
-            </h2>
+        <form class="form"id="form">
+            <h2 id="validationSummary"> Contacto</h2>
             
-            <input class="formFields" type="text" name="name" id="name" >
-            <label  class="label" for="name">Nombre</label>
+            <div class="grupo" id="grupo-nom">
+                <input class="formFields" type="text" name="name" id="name" >
+                <label  class="label" for="name">Nombre</label>
+            </div>
+
+            <div class="grupo" id="grupo-apellido">
+                <input class="formFields" type="text" name="apellido" id="apellido">
+                <label  class="label" for="apellido">Apellido</label>
+            </div>
             
-            <input class="formFields" type="text" name="apellido" id="apellido">
-            <label  class="label" for="apellido">Apellido</label>
+            <div class="grupo" id="grupo-mail">
+                <input type="text" class="formFields" name="email" id="email" >
+                <label class="label" for="email">Mail</label>
+            </div>
+
+            <div class="grupo" id="grupo-asunto">
+                <select name="asunto"> 
+                    <option value="sell"> Venta de vela/s </option>
+                    <option value="buy">Compra de vela/s</option>
+                    <option value="general">Otra..</option>
+                </select>
+
+            </div>
+            <div class="grupo" id="grupo-mensaje">
+                <textarea class="formFields" name="mensaje" cols="30" rows="10" placeholder="Ingrese su mensaje"></textarea>
+            </div>
             
-            <input type="text" class="formFields" name="email" id="email" >
-            <label class="label" for="email">Mail</label>
+            <div class="boton">
+                <button class="formFields" type="submit">Enviar</button>
+            </div>
 
-            <select name="asunto"> 
-                <option value="sell"> Venta de vela/s </option>
-                <option value="buy">Compra de vela/s</option>
-                <option value="general">Otra..</option>
-            </select>
-
-            <textarea class="formFields" name="mensaje" cols="30" rows="10" placeholder="Ingrese su mensaje"></textarea>
-
-            <button class="formFields" type="submit">Enviar</button>
+            <div class="msj" id="msj">
+				<p><b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
 
         </form>
 
